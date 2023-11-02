@@ -19,19 +19,50 @@ export const menuData = [
   {
     title: "Leave Summary",
     icon: <ArrowPathIcon color="#fff" size={hp(4)} />,
-    route: "",
+    route: "LeaveSummary",
     bgColor: "#009CC1",
   },
   {
     title: "Applied Leave",
     icon: <CalendarIcon color="#fff" size={hp(4)} />,
-    route: "",
+    route: "AppliedLeave",
     bgColor: "#D2C729",
   },
   {
     title: "Attendance",
     icon: <CalendarDaysIcon color="#fff" size={hp(4)} />,
-    route: "",
+    route: "Attendance",
     bgColor: "#D1D3D4",
+  },
+];
+
+export const leaveType = [
+  {
+    title: "Sick Leave",
+    value: 2,
+  },
+  {
+    title: "Casual Leave",
+    value: 3,
+  },
+  {
+    title: "Annual Leave",
+    value: 4,
+  },
+  {
+    title: "Maternity Leave",
+    value: 5,
+  },
+  {
+    title: "Bereavement Leave",
+    value: 6,
+  },
+  {
+    title: "Marriage Leave",
+    value: 7,
+  },
+  {
+    title: "Leave Without Pay",
+    value: 8,
   },
 ];

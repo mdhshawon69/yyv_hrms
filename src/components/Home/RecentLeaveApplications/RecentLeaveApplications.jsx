@@ -58,7 +58,9 @@ export default function RecentLeaveApplications() {
                 </View>
               </View>
               <View className="bg-green-500/30 py-1 px-3 rounded-2xl">
-                <Text className="text-green-500 font-bold">Approved</Text>
+                <Text className="text-green-500 font-bold mb-0.5">
+                  Approved
+                </Text>
               </View>
             </View>
           </TouchableOpacity>

@@ -27,9 +27,11 @@ export default function Home() {
 
       <ScrollView onScroll={handleScroll} scrollEventThrottle={16}>
         {/* Header */}
+
         <View
           className="bg-[#C82159]"
-          style={{ height: hp(33), paddingTop: hp(6) }}>
+          style={{ height: hp(33), paddingTop: hp(6) }}
+        >
           <View className="px-4">
             <View className="flex-row justify-between items-center top-0 left-0">
               <Pressable className="bg-white p-2 rounded-full">
@@ -46,7 +48,8 @@ export default function Home() {
             </Text>
             <Text
               className="text-white font-bold leading-[30px]"
-              style={{ fontSize: hp(3) }}>
+              style={{ fontSize: hp(3) }}
+            >
               Good Morning!
             </Text>
           </View>
@@ -55,11 +58,13 @@ export default function Home() {
         {/* Body Items */}
         <View
           className="flex-1 bg-white rounded-tl-[25] rounded-tr-[25] p-4"
-          style={{ marginTop: hp(-5) }}>
+          style={{ marginTop: hp(-5) }}
+        >
           <View className="flex-row justify-between items-center">
             <Text
               className="font-bold text-[#231F20]"
-              style={{ fontSize: hp(2.2) }}>
+              style={{ fontSize: hp(2.2) }}
+            >
               Overview
             </Text>
             <View className="py-1 px-2.5 bg-gray-500 rounded-2xl">

@@ -12,10 +12,11 @@ export default function MenuCards() {
   return (
     <View
       className="flex-row justify-between gap-2.5 flex-wrap"
-      style={{ paddingVertical: hp(2) }}>
+      style={{ paddingVertical: hp(2) }}
+    >
       {menuData.map((item, i) => (
         <TouchableOpacity
-          onPress={() => navigation.push(item.route)}
+          onPress={() => navigation.navigate(item.route)}
           style={{
             width: wp(44.5),
             height: hp(14),
@@ -31,16 +32,19 @@ export default function MenuCards() {
 
             elevation: 2,
           }}
-          key={i}>
+          key={i}
+        >
           <View className="justify-center items-center flex-1 rounded-md">
             <View
               className="self-center p-4 rounded-full"
-              style={{ backgroundColor: item.bgColor }}>
+              style={{ backgroundColor: item.bgColor }}
+            >
               {item.icon}
             </View>
             <Text
               className="font-bold mt-1 text-[#231F20]"
-              style={{ fontSize: hp(2) }}>
+              style={{ fontSize: hp(2) }}
+            >
               {item.title}
             </Text>
           </View>

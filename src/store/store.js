@@ -15,4 +15,12 @@ export const formStore = create((set) => ({
   setStartDate: (startDate) => set(() => ({ startDate: startDate })),
   setEndDate: (endDate) => set(() => ({ endDate: endDate })),
   setLeaveHours: (hours) => set(() => ({ leaveHours: hours })),
+  cancel: () =>
+    set(() => ({
+      reason: "",
+      typeOfLeave: "",
+      startDate: "",
+      endDate: "",
+      leaveHours: "",
+    })),
 }));

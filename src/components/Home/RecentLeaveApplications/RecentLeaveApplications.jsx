@@ -22,12 +22,11 @@ export default function RecentLeaveApplications() {
 
       <View className="flex-col gap-3" style={{ paddingVertical: hp(2) }}>
         {/* Recent leave card */}
-        {Array.from({ length: 5 }).map((item, i) => (
+        {Array.from({ length: 3 }).map((item, i) => (
           <TouchableOpacity
             key={i}
             style={styles.boxShadow}
-            className="bg-white p-3 rounded-lg"
-          >
+            className="bg-white p-3 rounded-lg">
             <View className="flex-row justify-between items-center bg-white">
               <View className="flex-row justify-start items-center gap-3 bg-white">
                 <View className="bg-gray-400 self-start rounded-full overflow-hidden">
@@ -39,20 +38,17 @@ export default function RecentLeaveApplications() {
                 <View>
                   <Text
                     className="font-bold text-gray-800"
-                    style={{ fontSize: hp(2) }}
-                  >
+                    style={{ fontSize: hp(2) }}>
                     Mahmudul Haque
                   </Text>
                   <Text
                     className="font-bold text-green-500"
-                    style={{ fontSize: hp(1.7) }}
-                  >
+                    style={{ fontSize: hp(1.7) }}>
                     12 Jan - 22 Jan, 2023
                   </Text>
                   <Text
                     className="font-bold text-gray-500"
-                    style={{ fontSize: hp(1.6) }}
-                  >
+                    style={{ fontSize: hp(1.6) }}>
                     Casual Leave
                   </Text>
                 </View>

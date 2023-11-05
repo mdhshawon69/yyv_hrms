@@ -6,6 +6,7 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { ScrollView } from "react-native";
+import SummaryCards from "../SummaryCards/SummaryCards";
 
 export default function LeaveSummaryCalender() {
   const datesToMark = [
@@ -49,69 +50,104 @@ export default function LeaveSummaryCalender() {
     };
   });
   return (
-    <View className="bg-white pb-4">
+    <ScrollView className="pb-4">
       <Calendar
         style={{ width: wp(100) }}
         markingType="period"
         markedDates={markedDates}
       />
+      {/* <View
+        className="w-full bg-gray-300"
+        style={{ height: hp(0.1), marginTop: hp(2) }}></View> */}
 
-      <ScrollView
+      {/* <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        style={{ paddingVertical: hp(1) }}
-      >
+        style={{ paddingVertical: hp(1) }}>
         <View className="flex-row justify-start items-center py-1 px-4 gap-3">
           <View className="flex-row gap-1 justify-start items-center">
             <View
               className="bg-[#C82159] rounded-full"
-              style={{ width: hp(2.5), height: hp(2.5) }}
-            ></View>
+              style={{ width: hp(2.5), height: hp(2.5) }}></View>
             <Text
               style={{ fontSize: hp(2) }}
-              className="font-semibold text-slate-800"
-            >
-              Sick
+              className="font-semibold text-slate-800">
+              Sick Leave
             </Text>
           </View>
           <View className="flex-row gap-1 justify-start items-center">
             <View
               className=" bg-[#009CC1] rounded-full"
-              style={{ width: hp(2.5), height: hp(2.5) }}
-            ></View>
+              style={{ width: hp(2.5), height: hp(2.5) }}></View>
             <Text
               style={{ fontSize: hp(2) }}
-              className="font-semibold text-slate-800"
-            >
-              Casual
+              className="font-semibold text-slate-800">
+              Casual Leave
             </Text>
           </View>
           <View className="flex-row gap-1 justify-start items-center">
             <View
               className=" bg-[#D2C729] rounded-full"
-              style={{ width: hp(2.5), height: hp(2.5) }}
-            ></View>
+              style={{ width: hp(2.5), height: hp(2.5) }}></View>
             <Text
               style={{ fontSize: hp(2) }}
-              className="font-semibold text-slate-800"
-            >
-              Annual
+              className="font-semibold text-slate-800">
+              Annual Leave
             </Text>
           </View>
           <View className="flex-row gap-1 justify-start items-center">
             <View
               className="bg-gray-500 rounded-full"
-              style={{ width: hp(2.5), height: hp(2.5) }}
-            ></View>
+              style={{ width: hp(2.5), height: hp(2.5) }}></View>
             <Text
               style={{ fontSize: hp(2) }}
-              className="font-semibold text-slate-800"
-            >
-              Marriage
+              className="font-semibold text-slate-800">
+              Maternity Leave
+            </Text>
+          </View>
+          <View className="flex-row gap-1 justify-start items-center">
+            <View
+              className="bg-gray-500 rounded-full"
+              style={{ width: hp(2.5), height: hp(2.5) }}></View>
+            <Text
+              style={{ fontSize: hp(2) }}
+              className="font-semibold text-slate-800">
+              Marriage Leave
+            </Text>
+          </View>
+          <View className="flex-row gap-1 justify-start items-center">
+            <View
+              className="bg-gray-500 rounded-full"
+              style={{ width: hp(2.5), height: hp(2.5) }}></View>
+            <Text
+              style={{ fontSize: hp(2) }}
+              className="font-semibold text-slate-800">
+              Maternity Leave
+            </Text>
+          </View>
+          <View className="flex-row gap-1 justify-start items-center">
+            <View
+              className="bg-gray-500 rounded-full"
+              style={{ width: hp(2.5), height: hp(2.5) }}></View>
+            <Text
+              style={{ fontSize: hp(2) }}
+              className="font-semibold text-slate-800">
+              Bereavement Leave
+            </Text>
+          </View>
+          <View className="flex-row gap-1 justify-start items-center">
+            <View
+              className="bg-gray-500 rounded-full"
+              style={{ width: hp(2.5), height: hp(2.5) }}></View>
+            <Text
+              style={{ fontSize: hp(2) }}
+              className="font-semibold text-slate-800">
+              Leave Without Pay
             </Text>
           </View>
         </View>
-      </ScrollView>
-    </View>
+      </ScrollView> */}
+      <SummaryCards />
+    </ScrollView>
   );
 }

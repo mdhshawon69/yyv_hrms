@@ -26,9 +26,9 @@ export default function RecentLeaveApplications() {
           <TouchableOpacity
             key={i}
             style={styles.boxShadow}
-            className="bg-white p-3 rounded-lg">
-            <View className="flex-row justify-between items-center bg-white">
-              <View className="flex-row justify-start items-center gap-3 bg-white">
+            className="bg-gray-400 p-3 rounded-lg">
+            <View className="flex-row justify-between items-center rounded-lg">
+              <View className="flex-row justify-start items-center gap-3">
                 <View className="bg-gray-400 self-start rounded-full overflow-hidden">
                   <Image
                     style={{ height: hp(8), width: hp(8) }}

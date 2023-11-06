@@ -51,6 +51,11 @@ export default function LeaveSummaryCalender() {
   });
   return (
     <ScrollView className="pb-4">
+      <View className="flex-row justify-between items-center p-4">
+        <Text className="font-bold" style={{ fontSize: hp(2.2) }}>
+          Leave Calender
+        </Text>
+      </View>
       <Calendar
         style={{ width: wp(100) }}
         markingType="period"

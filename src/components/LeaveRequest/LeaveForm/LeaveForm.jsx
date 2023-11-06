@@ -96,8 +96,7 @@ export default function LeaveForm() {
                     height: hp(6.5),
                     marginTop: hp(0.7),
                     paddingHorizontal: hp(1.2),
-                  }}
-                >
+                  }}>
                   <TextInput
                     className="h-full"
                     cursorColor="#C82159"
@@ -116,16 +115,14 @@ export default function LeaveForm() {
                   onPress={() => {
                     setModalType("leave-type");
                     openModal();
-                  }}
-                >
+                  }}>
                   <View
                     className="bg-gray-200 shadow-2xl rounded-[5px] justify-center"
                     style={{
                       height: hp(6.5),
                       marginTop: hp(0.7),
                       paddingHorizontal: hp(1.2),
-                    }}
-                  >
+                    }}>
                     <Text style={{ fontSize: hp(2) }}>
                       {!typeOfLeave ? "Select Leave Type" : typeOfLeave}
                     </Text>
@@ -140,16 +137,14 @@ export default function LeaveForm() {
                   onPress={() => {
                     setModalType("start-date");
                     openModal();
-                  }}
-                >
+                  }}>
                   <View
                     className="bg-gray-200 shadow-2xl rounded-[5px] justify-center"
                     style={{
                       height: hp(6.5),
                       marginTop: hp(0.7),
                       paddingHorizontal: hp(1.2),
-                    }}
-                  >
+                    }}>
                     <Text style={{ fontSize: hp(2) }}>
                       {!startDate
                         ? "Select Start Date"
@@ -166,16 +161,14 @@ export default function LeaveForm() {
                   onPress={() => {
                     setModalType("end-date");
                     openModal();
-                  }}
-                >
+                  }}>
                   <View
                     className="bg-gray-200 shadow-2xl rounded-[5px] justify-center"
                     style={{
                       height: hp(6.5),
                       marginTop: hp(0.7),
                       paddingHorizontal: hp(1.2),
-                    }}
-                  >
+                    }}>
                     <Text style={{ fontSize: hp(2) }}>
                       {!endDate
                         ? "Select Leave Type"
@@ -192,16 +185,14 @@ export default function LeaveForm() {
                   onPress={() => {
                     setModalType("leave-hours");
                     openModal();
-                  }}
-                >
+                  }}>
                   <View
                     className="bg-gray-200 shadow-2xl rounded-[5px] justify-center"
                     style={{
                       height: hp(6.5),
                       marginTop: hp(0.7),
                       paddingHorizontal: hp(1.2),
-                    }}
-                  >
+                    }}>
                     <Text style={{ fontSize: hp(2) }}>
                       {!leaveHours
                         ? "Select Leave Hours (If any)"
@@ -211,14 +202,10 @@ export default function LeaveForm() {
                 </Pressable>
               </View>
               <View className="flex-row justify-between items-center gap-x-5">
-                <TouchableOpacity
-                  o
-                  className="bg-blue-500 flex-1 py-4 rounded-[5px] items-center justify-center"
-                >
+                <TouchableOpacity className="bg-blue-500 flex-1 py-4 rounded-[5px] items-center justify-center">
                   <Text
                     className="text-white font-semibold"
-                    style={{ fontSize: hp(2) }}
-                  >
+                    style={{ fontSize: hp(2) }}>
                     Submit
                   </Text>
                 </TouchableOpacity>
@@ -227,12 +214,10 @@ export default function LeaveForm() {
                     cancel();
                     navigation.navigate("Home");
                   }}
-                  className="bg-slate-800 flex-1 py-4 rounded-[5px] items-center justify-center"
-                >
+                  className="bg-slate-800 flex-1 py-4 rounded-[5px] items-center justify-center">
                   <Text
                     className="text-white font-semibold"
-                    style={{ fontSize: hp(2) }}
-                  >
+                    style={{ fontSize: hp(2) }}>
                     Cancel
                   </Text>
                 </TouchableOpacity>
@@ -245,15 +230,13 @@ export default function LeaveForm() {
               enablePanDownToClose={true}
               ref={bottomSheetModalRef}
               index={1}
-              snapPoints={snapPoints}
-            >
+              snapPoints={snapPoints}>
               <View
                 style={{
                   flex: 1,
                   alignItems: "left",
                   paddingVertical: hp(2.5),
-                }}
-              >
+                }}>
                 {modalType === "leave-type" &&
                   leaveType.map((item, i) => (
                     <Pressable
@@ -262,8 +245,7 @@ export default function LeaveForm() {
                       onPress={() => {
                         setTypeOfLeave(item.title);
                         closeModal();
-                      }}
-                    >
+                      }}>
                       <View
                         className="border-b border-gray-300 w-full flex-row justify-between items-center"
                         style={{
@@ -271,15 +253,13 @@ export default function LeaveForm() {
                           backgroundColor:
                             typeOfLeave === item.title &&
                             "rgba(200, 33, 89, 1)",
-                        }}
-                      >
+                        }}>
                         <Text
                           className="font-semibold"
                           style={{
                             fontSize: hp(2),
                             color: typeOfLeave === item.title && "#fff",
-                          }}
-                        >
+                          }}>
                           {item.title}
                         </Text>
                         {typeOfLeave === item.title && (
@@ -296,23 +276,20 @@ export default function LeaveForm() {
                       onPress={() => {
                         setLeaveHours(i + 1);
                         closeModal();
-                      }}
-                    >
+                      }}>
                       <View
                         className="border-b border-gray-300 w-full flex-row justify-between items-center"
                         style={{
                           padding: hp(1.5),
                           backgroundColor:
                             leaveHours === i + 1 && "rgba(200, 33, 89, 1)",
-                        }}
-                      >
+                        }}>
                         <Text
                           className="font-semibold"
                           style={{
                             fontSize: hp(2),
                             color: leaveHours === i + 1 && "#fff",
-                          }}
-                        >
+                          }}>
                           {i + 1}
                         </Text>
                         {leaveHours === i + 1 && (

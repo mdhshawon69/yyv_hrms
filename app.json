@@ -11,9 +11,13 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
+
+    "expo-build-properties": {
+      "ios": {
+        "useFrameworks": "static"
+      }
+    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.mdhshawon69.yyvhrms"

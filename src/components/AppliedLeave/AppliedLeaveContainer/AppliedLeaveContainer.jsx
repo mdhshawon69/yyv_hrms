@@ -22,24 +22,23 @@ import Animated, {
 } from "react-native-reanimated";
 
 export default function AppliedLeaveContainer() {
-  const [expanded, setExpanded] = useState(false);
-  const [index, setIndex] = useState(0);
+  const [expanded, setExpanded] = useState(Array(3).fill(false));
   const height = useSharedValue(0);
 
   const toggleHeight = (i) => {
     "worklet";
 
-    setExpanded(!expanded);
+    const newExpanded = [...expanded];
+    newExpanded[i] = !newExpanded[i];
+    setExpanded(newExpanded);
+
     // Animate the height
-    height.value = withDelay(
-      0,
-      withTiming(i === index ? hp(27.5) : 0, {
-        duration: 300,
-        easing: Easing.inOut(Easing.ease),
-        damping: 2,
-        stiffness: 80,
-      })
-    );
+    height.value = withTiming(newExpanded[i] ? hp(27.5) : 0, {
+      duration: 300,
+      easing: Easing.inOut(Easing.ease),
+      damping: 2,
+      stiffness: 80,
+    });
   };
 
   return (
@@ -49,7 +48,6 @@ export default function AppliedLeaveContainer() {
         {Array.from({ length: 3 }).map((item, i) => (
           <TouchableOpacity
             onPress={() => {
-              setIndex((prev) => (prev === i ? "" : i));
               toggleHeight(i);
             }}
             key={i}
@@ -87,10 +85,7 @@ export default function AppliedLeaveContainer() {
                 </Text>
               </View>
             </View>
-            <Animated.View
-              style={[
-                { overflow: "hidden", height: i !== index ? hp(0) : height },
-              ]}>
+            <Animated.View style={[{ overflow: "hidden", height: height }]}>
               <View style={{ paddingVertical: hp(1.5) }}>
                 <Text className="font-semibold" style={{ fontSize: hp(1.7) }}>
                   Leave Application Review Status:

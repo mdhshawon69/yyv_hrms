@@ -4,6 +4,7 @@ import LeaveRequest from "./src/screens/LeaveRequest/LeaveRequest";
 import MyDrawer from "./drawerNavigation";
 import LeaveSummary from "./src/screens/LeaveSummary/LeaveSummary";
 import AppliedLeaves from "./src/screens/AppliedLeaves/AppliedLeaves";
+import Attendance from "./src/screens/Attendance/Attendance";
 
 export default function Navigation() {
   const Stack = createNativeStackNavigator();
@@ -51,6 +52,19 @@ export default function Navigation() {
           },
           headerShadowVisible: false,
           headerTitle: "Applied Leave",
+          headerTitleAlign: "center",
+          headerTintColor: "#fff",
+        }}
+      />
+      <Stack.Screen
+        name="Attendance"
+        component={Attendance}
+        options={{
+          headerStyle: {
+            backgroundColor: "#C82159",
+          },
+          headerShadowVisible: false,
+          headerTitle: "Attendance",
           headerTitleAlign: "center",
           headerTintColor: "#fff",
         }}

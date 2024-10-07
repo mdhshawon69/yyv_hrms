@@ -1,11 +1,4 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-  ScrollView,
-  Platform,
-} from "react-native";
+import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import React, { useState } from "react";
 import {
   widthPercentageToDP as wp,
@@ -16,30 +9,24 @@ import user from "../../../../assets/user.png";
 import styles from "../../../styles/styles";
 import Animated, {
   useSharedValue,
-  withDelay,
   withTiming,
   Easing,
 } from "react-native-reanimated";
 
 export default function AppliedLeaveContainer() {
-  const [expanded, setExpanded] = useState(Array(3).fill(false));
-  const height = useSharedValue(0);
+  const [showI, setShowI] = useState(null);
+  // const height = useSharedValue(0);
 
-  const toggleHeight = (i) => {
-    "worklet";
-
-    const newExpanded = [...expanded];
-    newExpanded[i] = !newExpanded[i];
-    setExpanded(newExpanded);
-
-    // Animate the height
-    height.value = withTiming(newExpanded[i] ? hp(27.5) : 0, {
-      duration: 300,
-      easing: Easing.inOut(Easing.ease),
-      damping: 2,
-      stiffness: 80,
-    });
-  };
+  // const toggleHeight = (i) => {
+  //   "worklet";
+  //   // Animate the height
+  //   height.value = withTiming(showI === i && hp(27.5), {
+  //     duration: 300,
+  //     easing: Easing.inOut(Easing.ease),
+  //     damping: 2,
+  //     stiffness: 80,
+  //   });
+  // };
 
   return (
     <ScrollView>
@@ -48,7 +35,7 @@ export default function AppliedLeaveContainer() {
         {Array.from({ length: 3 }).map((item, i) => (
           <TouchableOpacity
             onPress={() => {
-              toggleHeight(i);
+              setShowI(showI === i ? null : i);
             }}
             key={i}
             style={styles.boxShadow}
@@ -85,7 +72,10 @@ export default function AppliedLeaveContainer() {
                 </Text>
               </View>
             </View>
-            <Animated.View style={[{ overflow: "hidden", height: height }]}>
+            <Animated.View
+              style={[
+                { overflow: "hidden", height: showI === i ? hp(27.5) : 0 },
+              ]}>
               <View style={{ paddingVertical: hp(1.5) }}>
                 <Text className="font-semibold" style={{ fontSize: hp(1.7) }}>
                   Leave Application Review Status:

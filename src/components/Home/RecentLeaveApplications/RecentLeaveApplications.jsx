@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image, Pressable } from "react-native";
 import React from "react";
 import {
   widthPercentageToDP as wp,
@@ -7,15 +7,18 @@ import {
 
 import user from "../../../../assets/user.png";
 import styles from "../../../styles/styles";
+import { useNavigation } from "@react-navigation/native";
 
 export default function RecentLeaveApplications() {
+  const navigation = useNavigation();
   return (
     <View>
       <View className="flex-row justify-between items-center">
         <Text className="font-bold" style={{ fontSize: hp(2.2) }}>
           Recent Leave Applications
         </Text>
-        <TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate("AppliedLeave")}>
           <Text className="font-bold text-blue-500">See All</Text>
         </TouchableOpacity>
       </View>

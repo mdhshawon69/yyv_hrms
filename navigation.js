@@ -1,7 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./src/screens/Home/Home";
 import LeaveRequest from "./src/screens/LeaveRequest/LeaveRequest";
-import MyDrawer from "./drawerNavigation";
 import LeaveSummary from "./src/screens/LeaveSummary/LeaveSummary";
 import AppliedLeaves from "./src/screens/AppliedLeaves/AppliedLeaves";
 import Attendance from "./src/screens/Attendance/Attendance";
